@@ -1,0 +1,23 @@
+@use "utils/variables" as vars;
+@use "utils/mixins" as mixins;
+@use "utils/colors" as colors;
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // z-index: 999;
+  background-color: vars.$secondary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    opacity: 1;
+    color: vars.$primary-color;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: default;
+  }
+}

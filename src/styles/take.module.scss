@@ -1,0 +1,77 @@
+@use "utils/variables" as vars;
+@use "utils/colors" as colors;
+@use "utils/mixins" as mixins;
+
+.card {
+  border: 1px solid vars.$primary-color;
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  padding-top: 1px;
+  box-shadow: 1px 1px 10px lighten(vars.$primary-color, 68%);
+  .cardHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      border-right: 1px solid vars.$primary-color;
+      border-bottom: 1px solid vars.$primary-color;
+      padding: 2px;
+    }
+    button {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      font-size: 1.5rem;
+    }
+  }
+  .cardBody {
+    padding: 10px;
+  }
+}
+
+.productName {
+  color: vars.$primary-color;
+  .productSelect {
+    color: vars.$primary-color;
+    background-color: transparent;
+    border-radius: 0.25em;
+    height: 2rem;
+    font-size: 15px;
+    padding: 0px 10px;
+    width: 100%;
+    option {
+      width: 100%;
+    }
+  }
+}
+
+.productQty {
+  margin-top: 5%;
+  color: vars.$primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    width: 40%;
+    padding: 5px 10px;
+  }
+}
+
+.addProduct {
+  padding: 8px 20px;
+  margin-bottom: 50px;
+}
+
+.checkOut {
+  padding: 15px 0px;
+  width: 100%;
+  color: colors.getBtnTextColor(vars.$primary-color);
+  background-color: vars.$primary-color;
+  border: none;
+  border-radius: 0.25em;
+  margin-top: auto;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+@use "utils/mixins" as mixins;
+
+@font-face {
+  font-family: Recursive;
+  src: url("/fonts/Recursive-Regular.ttf");
+}
+
+* {
+  font-family: Recursive;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 90vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  @include mixins.xl {
+    padding-top: 7rem;
+  }
+}

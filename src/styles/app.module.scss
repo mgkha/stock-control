@@ -1,0 +1,67 @@
+@use "utils/variables" as vars;
+@use "utils/mixins" as mixins;
+@use "utils/colors" as colors;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: vars.$primary-color;
+}
+
+.footer {
+  width: 100%;
+  height: 10vh;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navWrap {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mixins.sm {
+    width: 90%;
+  }
+  @include mixins.xl {
+    max-width: 1260px;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  @include mixins.sm {
+    height: 50px;
+  }
+  @include mixins.md {
+    height: 60px;
+  }
+  @include mixins.lg {
+    height: 70px;
+  }
+  @include mixins.xl {
+    height: 80px;
+  }
+}
+
+.appName {
+  color: colors.getBtnTextColor(vars.$primary-color);
+  font-size: 16px;
+  @include mixins.sm {
+    font-size: 20px;
+  }
+  @include mixins.md {
+    font-size: 20px;
+  }
+  @include mixins.lg {
+    font-size: 30px;
+  }
+}

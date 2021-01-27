@@ -1,0 +1,7 @@
+@function getBtnTextColor($color) {
+  @if (lightness($color) > 40) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}

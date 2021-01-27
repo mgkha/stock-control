@@ -1,0 +1,58 @@
+@use "utils/variables" as vars;
+@use "utils/colors" as colors;
+@use "utils/mixins" as mixins;
+
+.loginForm {
+  background-color: vars.$primary-color;
+  color: colors.getBtnTextColor(vars.$primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 0.2rem;
+  box-shadow: 10px 10px 10px #979797;
+  align-items: center;
+  margin-top: 10vh;
+  h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    text-transform: uppercase;
+    color: vars.$primary-color;
+    font-weight: bold;
+  }
+}
+
+.loginInput {
+  margin-top: 20px;
+  label {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.remember {
+  padding: 10px 0px;
+  width: 100%;
+  label {
+    font-size: 0.8rem;
+  }
+  input {
+    margin: 0;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+}

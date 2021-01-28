@@ -12,11 +12,11 @@ export async function getStaticProps() {
   };
 }
 
-interface IProp {
+type Props = {
   stockList: string[];
-}
+};
 
-export default function Take(props: IProp) {
+export default function Take(props: Props) {
   const defaultProduct: IProduct = { productName: "", productQty: 1 };
   const [products, setProducts] = useState<IProduct[]>([{ ...defaultProduct }]);
   const router = useRouter();

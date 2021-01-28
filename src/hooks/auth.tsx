@@ -2,16 +2,16 @@ import firebase from "firebase";
 import { createContext, ReactNode, useContext, useState } from "react";
 import firebaseAuth from "services/firebase/auth";
 
-interface IProps {
+type Props = {
   children: ReactNode;
-}
+};
 
 export const AuthContext = createContext<[boolean, firebase.User | null]>([
   true,
   null,
 ]);
 
-export const AuthProvider = (props: IProps) => {
+export const AuthProvider = (props: Props) => {
   const [auth, setAuth] = useState<firebase.User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 

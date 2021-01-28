@@ -3,16 +3,11 @@
 @use "utils/mixins" as mixins;
 
 .tableWrapper {
-  height: 50vh;
+  height: 45vh;
   overflow-y: scroll;
   background-color: #f8f8f8;
   box-shadow: 1px 1px 10px #c5c5c5;
 }
-
-// .tableWrapper,
-// .tableWrapper td {
-//   box-shadow: inset 1px -1px #000;
-// }
 
 .tableWrapper th {
   box-shadow: 0px 1px #000;

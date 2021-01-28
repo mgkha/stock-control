@@ -1,16 +1,16 @@
 import styles from "styles/take.module.scss";
 import IProduct from "types/product";
 
-interface Prop {
+type Props = {
   index: number;
   product: IProduct;
   stockList: string[];
   onRemoveProduct: React.MouseEventHandler<HTMLButtonElement>;
   onChangeProductName: React.ChangeEventHandler<HTMLSelectElement>;
   onChangeProductQty: React.ChangeEventHandler<HTMLInputElement>;
-}
+};
 
-export default function Product(props: Prop) {
+export default function Product(props: Props) {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>

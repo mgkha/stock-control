@@ -3,11 +3,11 @@ import Link from "next/link";
 import firebase from "firebase";
 import firebaseAuth from "services/firebase/auth";
 
-interface IProps {
+type Props = {
   auth: firebase.User;
-}
+};
 
-export default function Index(props: IProps) {
+export default function Index(props: Props) {
   return (
     <div className="container">
       <main className="main">

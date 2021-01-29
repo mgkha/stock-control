@@ -2,8 +2,13 @@
 @use "utils/colors" as colors;
 @use "utils/mixins" as mixins;
 
+.checkout {
+  width: 90%;
+}
+
 .tableWrapper {
   height: 45vh;
+  width: 100%;
   overflow-y: scroll;
   background-color: #f8f8f8;
   box-shadow: 1px 1px 10px #c5c5c5;
@@ -14,6 +19,7 @@
 }
 
 .tableCheckout {
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -26,6 +32,10 @@
 .tableCheckout th,
 .tableCheckout td {
   padding: 20px 25px;
+}
+
+.tableCheckout td {
+  word-break: break-all;
 }
 
 .tableCheckout tr:nth-of-type(odd) {

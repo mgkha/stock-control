@@ -42,55 +42,57 @@ export default function Checkout() {
     <>
       <div className="container">
         <main className="main">
-          <div className={styles.tableWrapper}>
-            <table className={styles.tableCheckout}>
-              <thead>
-                <tr>
-                  <th>Product Name</th>
-                  <th>Qty</th>
-                </tr>
-              </thead>
-              <tbody>
-                {products &&
-                  products.map((value, key) => (
-                    <tr key={key}>
-                      <td>{value.productName}</td>
-                      <td>{value.productQty}</td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+          <div className={styles.checkout}>
+            <div className={styles.tableWrapper}>
+              <table className={styles.tableCheckout}>
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products &&
+                    products.map((value, key) => (
+                      <tr key={key}>
+                        <td>{value.productName}</td>
+                        <td>{value.productQty}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </div>
 
-          <div className={styles.summary}>
-            <span>Total Product:</span>
-            <span>
-              {products.reduce((prev, curr) => +prev + +curr.productQty, 0)}
-            </span>
-          </div>
+            <div className={styles.summary}>
+              <span>Total Product:</span>
+              <span>
+                {products.reduce((prev, curr) => +prev + +curr.productQty, 0)}
+              </span>
+            </div>
 
-          <textarea
-            className={styles.description}
-            placeholder="Description"
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
+            <textarea
+              className={styles.description}
+              placeholder="Description"
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
 
-          <div className={styles.actions}>
-            <button onClick={() => router.back()}>Back</button>
-            <button
-              className={styles.btnSubmit}
-              onClick={async (e) => {
-                if (description != "" && products.length > 0) {
-                  setLoading(true);
-                  await createInvoice(products, description);
-                  window.localStorage.removeItem("products");
-                  setLoading(false);
-                  setOpen(true);
-                }
-              }}
-            >
-              Submit
-            </button>
+            <div className={styles.actions}>
+              <button onClick={() => router.back()}>Back</button>
+              <button
+                className={styles.btnSubmit}
+                onClick={async (e) => {
+                  if (description != "" && products.length > 0) {
+                    setLoading(true);
+                    await createInvoice(products, description);
+                    window.localStorage.removeItem("products");
+                    setLoading(false);
+                    setOpen(true);
+                  }
+                }}
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </main>
       </div>

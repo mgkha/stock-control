@@ -34,3 +34,11 @@
     @content;
   }
 }
+
+@mixin multiple($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($bp, $key)) {
+      @content;
+    }
+  }
+}

@@ -10,7 +10,7 @@ export default function Checkout() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [description, setDescription] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
-  const [loading, setLoading] = useLoading();
+  const [setLoading] = useLoading();
   const router = useRouter();
 
   useEffect(() => {

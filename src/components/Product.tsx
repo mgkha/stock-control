@@ -24,7 +24,9 @@ export default function Product(props: Props) {
             value={props.product.productName}
             onChange={props.onChangeProductName}
           >
-            <option hidden>Choose a product</option>
+            <option hidden value="">
+              Choose a product
+            </option>
             {props.stockList.map((value, key) => (
               <option key={key} value={value}>
                 {value}

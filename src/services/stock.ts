@@ -5,8 +5,13 @@ import firebase from "firebase/app";
 
 export async function getAvaiableStocks(): Promise<string[]> {
   try {
-    const snapshot = await getFirestore().collection("stocks").get();
-    return snapshot.docs.map((doc) => doc.id);
+    let stocks: string[] = JSON.parse(window.sessionStorage.stocks || "[]");
+    if (stocks.length < 1) {
+      const snapshot = await getFirestore().collection("stocks").get();
+      stocks = snapshot.docs.map((doc) => doc.id);
+      window.sessionStorage.stocks = JSON.stringify(stocks);
+    }
+    return stocks;
   } catch (error) {
     console.log("[Firestore] Error: Cannot get stock list.", error.message);
   }

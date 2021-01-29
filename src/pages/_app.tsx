@@ -5,6 +5,7 @@ import { AuthProvider } from "hooks/auth";
 import PrivateRoute from "components/PrivateRoute";
 import { AppProps } from "next/app";
 import { LoadingProvider } from "hooks/loading";
+import Link from "next/link";
 
 function App({ Component, pageProps }: AppProps): JSX.Element {
   Component = PrivateRoute(Component);
@@ -20,7 +21,11 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
       <header className={styles.header}>
         <div className={styles.navWrap}>
           <div className={styles.nav}>
-            <span className={styles.appName}>Stock Control</span>
+            <span className={styles.appName}>
+              <Link href="/">
+                <a>Stock Control</a>
+              </Link>
+            </span>
           </div>
         </div>
       </header>
